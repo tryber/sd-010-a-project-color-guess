@@ -44,12 +44,6 @@ function challenger() {
     }
   });
 }
-function scoreReset() {
-  const scoreTextElement = document.getElementById('score');
-  let scoreText = parseInt(scoreTextElement.innerText, 10);
-  scoreText = 0;
-  scoreTextElement.innerText = scoreText;
-}
 
 function pickAColor() {
   const answer = document.getElementById('answer');
@@ -62,7 +56,6 @@ function initGame() {
   buttonInit.addEventListener('click', () => {
     generateTextRGB();
     generateColors();
-    scoreReset();
     pickAColor();
   });
 }
