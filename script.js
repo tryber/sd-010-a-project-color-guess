@@ -1,9 +1,12 @@
 window.onload = function answer() {
-  const circles = document.getElementsByClassName('ball');
+  const c = document.getElementsByClassName('ball');
   const index = Math.ceil(Math.random() * 6) - 1;
-  circles[index].id = 'correct';
-  for (let i = 0; i < circles.length; i += 1) {
-    circles[i].style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+  c[index].id = 'correct';
+  for (let i = 0; i < c.length; i += 1) {
+    const r = Math.random() * 255;
+    const g = Math.random() * 255;
+    const b = Math.random() * 255;
+    c[i].style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
   }
   const rgbColor = document.getElementById('correct').style.backgroundColor;
   document.getElementById('rgb-color').innerText = rgbColor;
