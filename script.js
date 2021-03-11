@@ -18,3 +18,9 @@ function attempt(event) {
 }
 
 document.getElementById('colors-container').addEventListener('click', attempt);
+
+function refreshPage() {
+  window.location.reload();
+}
+
+document.getElementById('reset-game').addEventListener('click', refreshPage);
