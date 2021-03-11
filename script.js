@@ -22,4 +22,10 @@ document.querySelector('.colorsContainer').addEventListener('click', function(ev
         paragraph.innerText = 'Errou! Tente novamente!'
     }
 });
-
+const buttonReset = document.createElement('button');
+document.body.appendChild(buttonReset);
+buttonReset.id = 'reset-game';
+buttonReset.innerText = 'Reiniciar';
+buttonReset.addEventListener('click', function() {
+    location.reload()
+});
