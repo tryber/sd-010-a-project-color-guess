@@ -1,4 +1,6 @@
-const random = `(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`;
+const random = `(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)},`
+  + ` ${Math.floor(Math.random() * 255)})`;
+const rgbColorId = '#rgb-color';
 
 function generateTextRGB() {
   const rgbText = document.querySelector('#rgb-color');
@@ -8,10 +10,39 @@ function generateTextRGB() {
 
 function generateColors() {
   const ballsList = document.querySelectorAll('.ball');
-  for (let i = 0; i < ballsList.length; i++) {
-   ballsList[i].style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+  const indexRandom = Math.floor(Math.random() * 5);
+  for (let i = 0; i < ballsList.length; i += 1) {
+    if (ballsList[i] !== ballsList[indexRandom]) {
+      ballsList[i].style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255},`
+        + `${Math.random() * 255})`;
+    } else {
+      ballsList[indexRandom].style.backgroundColor = `rgb${document.querySelector(rgbColorId).innerText}`;
+    }
   }
 }
 
-generateTextRGB();
-generateColors();
+function challenger() {
+  const ballsContainer = document.querySelector('.balls');
+  const answer = document.getElementById('answer');
+
+  ballsContainer.addEventListener('click', (event) => {
+    if (event.target.style.backgroundColor === `rgb${document.querySelector(rgbColorId)
+      .innerText}`) {
+      answer.innerText = 'Acertou!';
+    } else {
+      answer.innerText = 'Errou! Tente novamente!';
+    }
+  });
+}
+
+function initGame() {
+  const buttonInit = document.querySelector('#reset-game');
+
+  buttonInit.addEventListener('click', () => {
+    generateTextRGB();
+    generateColors();
+    challenger();
+  });
+}
+
+window.onload = initGame();
