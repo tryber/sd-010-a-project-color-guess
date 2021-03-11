@@ -4,6 +4,8 @@ const rgbColorId = '#rgb-color';
 
 function generateTextRGB() {
   const rgbText = document.querySelector('#rgb-color');
+  const scoreNumber = document.getElementById('scoreNumber');
+  scoreNumber.innerText = +(0);
 
   rgbText.innerText = random;
 }
@@ -16,7 +18,8 @@ function generateColors() {
       ballsList[i].style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255},`
         + `${Math.random() * 255})`;
     } else {
-      ballsList[indexRandom].style.backgroundColor = `rgb${document.querySelector(rgbColorId).innerText}`;
+      ballsList[indexRandom].style.backgroundColor = `rgb${document.querySelector(rgbColorId)
+        .innerText}`;
     }
   }
 }
@@ -29,6 +32,7 @@ function challenger() {
     if (event.target.style.backgroundColor === `rgb${document.querySelector(rgbColorId)
       .innerText}`) {
       answer.innerText = 'Acertou!';
+      score();
     } else {
       answer.innerText = 'Errou! Tente novamente!';
     }
@@ -39,10 +43,19 @@ function initGame() {
   const buttonInit = document.querySelector('#reset-game');
 
   buttonInit.addEventListener('click', () => {
-    generateTextRGB();
-    generateColors();
-    challenger();
+    location.reload();
   });
 }
 
-window.onload = initGame();
+function score() {
+  const scoreNumber = document.getElementById('scoreNumber');
+
+  scoreNumber.innerText += +(3);
+}
+
+window.onload = () => {
+  initGame();
+  generateTextRGB();
+  generateColors();
+  challenger();
+};
