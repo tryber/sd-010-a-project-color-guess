@@ -9,13 +9,13 @@ for (let counter = 1; counter <= 6; counter += 1) {
   ball.className = 'ball';
 };
 const colors = document.querySelectorAll('.ball');
-colors[Math.floor(Math.random() * 5.9)].classList.add('answer');
-document.querySelector('.answer').style.backgroundColor = 'rgb' + colorText.innerText;
+colors[Math.floor(Math.random() * 5.9)].id = 'answer';
+document.querySelector('#answer').style.backgroundColor = 'rgb' + colorText.innerText;
 const paragraph = document.createElement('p');
 document.body.appendChild(paragraph);
 paragraph.innerText = 'Escolha uma cor';
 document.querySelector('.colorsContainer').addEventListener('click', function(event) {
-    if (event.target.classList.contains('answer')) {
+    if (event.target.id === 'answer') {
         paragraph.innerText = 'Acertou!'
     }
     else {
