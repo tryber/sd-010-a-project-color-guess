@@ -1,8 +1,8 @@
-const random = `(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)},`
-  + ` ${Math.floor(Math.random() * 255)})`;
 const rgbColorId = '#rgb-color';
 
 function generateTextRGB() {
+  const random = `(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)},`
+  + ` ${Math.floor(Math.random() * 255)})`;
   const rgbText = document.querySelector('#rgb-color');
   rgbText.innerText = random;
 }
@@ -21,6 +21,13 @@ function generateColors() {
   }
 }
 
+function score() {
+  const scoreTextElement = document.getElementById('score');
+  let scoreText = parseInt(scoreTextElement.innerText, 10);
+  scoreText += 3;
+  scoreTextElement.innerText = scoreText;
+}
+
 function challenger() {
   const ballsContainer = document.querySelector('.balls');
   const answer = document.getElementById('answer');
@@ -37,20 +44,27 @@ function challenger() {
     }
   });
 }
+function scoreReset() {
+  const scoreTextElement = document.getElementById('score');
+  let scoreText = parseInt(scoreTextElement.innerText, 10);
+  scoreText = 0;
+  scoreTextElement.innerText = scoreText;
+}
+
+function pickAColor() {
+  const answer = document.getElementById('answer');
+  answer.innerText = 'Escolha uma cor';
+}
 
 function initGame() {
   const buttonInit = document.querySelector('#reset-game');
 
   buttonInit.addEventListener('click', () => {
-    location.reload();
+    generateTextRGB();
+    generateColors();
+    scoreReset();
+    pickAColor();
   });
-}
-
-function score() {
-  const scoreTextElement = document.getElementById('score');
-  let scoreText = parseInt(scoreTextElement.innerText);
-  scoreText += 3;
-  scoreTextElement.innerText = scoreText;
 }
 
 window.onload = () => {
