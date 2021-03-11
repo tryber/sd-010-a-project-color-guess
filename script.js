@@ -9,7 +9,7 @@ for (let counter = 1; counter <= 6; counter += 1) {
   ball.className = 'ball';
 };
 const colors = document.querySelectorAll('.ball');
-colors[Math.ceil(Math.random() * 6)].classList.add('answer');
+colors[Math.floor(Math.random() * 5.9)].classList.add('answer');
 document.querySelector('.answer').style.backgroundColor = 'rgb' + colorText.innerText;
 const paragraph = document.createElement('p');
 document.body.appendChild(paragraph);
