@@ -4,9 +4,6 @@ const rgbColorId = '#rgb-color';
 
 function generateTextRGB() {
   const rgbText = document.querySelector('#rgb-color');
-  const scoreNumber = document.getElementById('scoreNumber');
-  scoreNumber.innerText = +(0);
-
   rgbText.innerText = random;
 }
 
@@ -33,6 +30,8 @@ function challenger() {
       .innerText}`) {
       answer.innerText = 'Acertou!';
       score();
+      generateTextRGB();
+      generateColors();
     } else {
       answer.innerText = 'Errou! Tente novamente!';
     }
@@ -48,9 +47,10 @@ function initGame() {
 }
 
 function score() {
-  const scoreNumber = document.getElementById('scoreNumber');
-
-  scoreNumber.innerText += +(3);
+  const scoreTextElement = document.getElementById('score');
+  let scoreText = parseInt(scoreTextElement.innerText);
+  scoreText += 3;
+  scoreTextElement.innerText = scoreText;
 }
 
 window.onload = () => {
