@@ -27,3 +27,21 @@ function refreshPage() {
 }
 
 document.getElementById('reset-game').addEventListener('click', refreshPage);
+
+if (sessionStorage.getItem('score') === null) {
+  sessionStorage.setItem('score', '0');
+} else {
+  sessionStorage.setItem('score', parseInt(sessionStorage.getItem('score')) + 0);
+}
+
+document.getElementById('score').innerText = sessionStorage.getItem('score');
+
+function score(event) {
+  const tagScore = document.getElementById('score');
+  if (event.target.id === 'correct') {
+    tagScore.innerText = parseInt(tagScore.innerText) + 3;
+  }
+  sessionStorage.setItem('score', tagScore.innerText);
+}
+
+document.getElementById('colors-container').addEventListener('click', score);
