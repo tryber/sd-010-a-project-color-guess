@@ -40,6 +40,7 @@ function score(event) {
   const tagScore = document.getElementById('score');
   if (event.target.id === 'correct') {
     tagScore.innerText = parseInt(tagScore.innerText, 10) + 3;
+    document.getElementById('correct').id = 'checked';
   }
   sessionStorage.setItem('score', tagScore.innerText);
 }
