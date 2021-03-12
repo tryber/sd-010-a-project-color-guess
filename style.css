@@ -9,7 +9,8 @@ header {
     text-align: center;
     font-size: 4vw;
     width: 35vw;
-    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   -webkit-background-clip: text;
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+        -webkit-background-clip: text;
     color: transparent;
 }
 
@@ -31,12 +32,12 @@ main {
     margin: 30px;
 }
 
-    .ball {
-        background: rgb(39, 199, 124);
-        border-radius: 50%;
-        width: 100px;
-        height: 100px;
-        margin: 15px;
-    }
+.ball {
+    background: rgb(39, 199, 124);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: 15px;
+}
 
 /* -----------------------footer----------------------- */
