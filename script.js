@@ -6,3 +6,12 @@ function numerosAleatorios() {
   numero.innerHTML = `rgb(${r}, ${g}, ${b})`;
 }
 numerosAleatorios();
+
+function balls() {
+  for (let index = 1; index <= 6; index += 1) {
+    const ball = document.createElement('div');
+    ball.classList.add('ball');
+    document.querySelector('#fatherBalls').appendChild(ball);
+  }
+}
+balls();

@@ -1,8 +1,22 @@
 h1 {
-   text-align: center;
-   color: rebeccapurple;
+  text-align: center;
+  color: rebeccapurple;
 }
 
 #rgb-color {
-    text-align: center;
+  text-align: center;
 }
+
+#fatherBalls {
+  display: flex;
+  justify-content: center;
+}
+
+.ball {
+  width: 50px;
+  height: 50px;
+  background-color: rebeccapurple;
+  border-radius: 50px;
+  margin-left: 20px;
+}
+
