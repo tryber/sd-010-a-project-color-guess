@@ -1,7 +1,6 @@
 function numerosAleatorios() {
   const ball = document.querySelectorAll('.ball');
   const numero = document.querySelector('#rgb-color');
-  console.log(ball[Math.floor(Math.random() * ball.length)].style.backgroundColor);
   numero.innerText = ball[Math.floor(Math.random() * ball.length)].style.backgroundColor;
 }
 
@@ -35,7 +34,7 @@ function clickBalls() {
       if (ball[index].style.backgroundColor === numero.innerHTML) {
         answer.innerHTML = 'Acertou!';
       } else {
-        answer.innerHTML = 'Errou! tente novamente!';
+        answer.innerHTML = 'Errou! Tente novamente!';
       }
     });
   }
