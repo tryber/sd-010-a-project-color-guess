@@ -1,4 +1,3 @@
-let numbersRgb;
 function numerosAleatorios() {
   const ball = document.querySelectorAll('.ball');
   const numero = document.querySelector('#rgb-color');
@@ -27,18 +26,18 @@ function changeColorsBalls() {
 }
 changeColorsBalls();
 numerosAleatorios();
-function clickBalls(){
+function clickBalls() {
   const answer = document.getElementById('answer');
   const ball = document.getElementsByClassName('ball');
-  for(let index = 0; index < ball.length; index += 1){
+  for (let index = 0; index < ball.length; index += 1) {
     ball[index].addEventListener('click', () => {
-      const numero = document.querySelector('#rgb-color')
-      if(ball[index].style.backgroundColor === numero.innerHTML){
-        answer.innerHTML = 'Acertou!'
-      }else {
-        answer.innerHTML = 'Errou! tente novamente!'
+      const numero = document.querySelector('#rgb-color');
+      if (ball[index].style.backgroundColor === numero.innerHTML) {
+        answer.innerHTML = 'Acertou!';
+      } else {
+        answer.innerHTML = 'Errou! tente novamente!';
       }
-    })
+    });
   }
 }
-clickBalls(); 
+clickBalls();
