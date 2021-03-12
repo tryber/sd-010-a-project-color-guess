@@ -1,5 +1,42 @@
 /* -----------------------header----------------------- */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rainbow-text {
+    text-align: center;
+    font-size: 4vw;
+    width: 35vw;
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   -webkit-background-clip: text;
+    color: transparent;
+}
 
 /* -----------------------main------------------------- */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#rgb-container {
+    font-size: 1.5vw;
+    margin: 30px;
+}
+
+#colors-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px;
+}
+
+    .ball {
+        background: rgb(39, 199, 124);
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        margin: 15px;
+    }
 
 /* -----------------------footer----------------------- */
