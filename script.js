@@ -11,6 +11,7 @@ function answer() {
   c[index].id = 'correct';
   const rgbColor = document.getElementById('correct').style.backgroundColor;
   document.getElementById('rgb-color').innerText = rgbColor;
+  document.getElementById('answer').innerText = 'Escolha uma cor';
 }
 
 window.onload = answer;
