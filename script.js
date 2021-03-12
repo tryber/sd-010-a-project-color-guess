@@ -13,7 +13,7 @@ window.onload = function answer() {
 };
 
 function attempt(event) {
-  if (event.target.id === 'correct') {
+  if (event.target.id === 'correct' || event.target.id === 'checked') {
     document.getElementById('answer').innerText = 'Acertou!';
   } else {
     document.getElementById('answer').innerText = 'Errou! Tente novamente!';
