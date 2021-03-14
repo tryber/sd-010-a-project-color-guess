@@ -1,4 +1,8 @@
-const nBalls = 6;
+const numberBalls = 6;
+const containerBalls = document.querySelector('#section-balls');
+const answer = document.querySelector('#answer');
+const rgbParagraph = document.querySelector('#rgb-color p');
+let score = 0;
 
 const createRandomRGB = () => {
   const r = Math.floor(Math.random() * 256);
@@ -9,8 +13,6 @@ const createRandomRGB = () => {
 };
 
 const createBalls = (numberOfBalls) => {
-  const containerBalls = document.querySelector('#section-balls');
-
   for (let index = 0; index < numberOfBalls; index += 1) {
     const divBall = document.createElement('div');
     divBall.classList.add('ball');
@@ -20,25 +22,39 @@ const createBalls = (numberOfBalls) => {
 };
 
 const createRandomCorrect = (numberOfBalls) => {
-  const positionCorret = Math.floor(Math.random() * numberOfBalls);
-  const ballCorret = document.querySelectorAll('.ball')[positionCorret];
-  ballCorret.id = 'correct';
-  document.querySelector('#rgb-color p').innerText = ballCorret.style.backgroundColor;
+  const randomPosition = Math.floor(Math.random() * numberOfBalls);
+  const randomBall = document.querySelectorAll('.ball')[randomPosition];
+  randomBall.id = 'correct';
+  rgbParagraph.innerText = randomBall.style.backgroundColor;
 };
 
 const clickBalls = () => {
   document.querySelectorAll('.ball').forEach((e) => {
-    e.addEventListener('click', (b) => {
-      const answer = document.querySelector('#answer');
-      const ball = b.target.style.backgroundColor;
-      const correctBall = document.querySelector('#rgb-color p').innerText;
-      if (ball === correctBall) answer.innerText = 'Acertou!';
-      else answer.innerText = 'Errou! Tente novamente!';
+    e.addEventListener('click', (eBall) => {
+      const ballBackground = eBall.target.style.backgroundColor;
+      const correctBall = rgbParagraph.innerText;
+
+      if (ballBackground === correctBall) {
+        answer.innerText = 'Acertou!';
+        score += 3;
+        document.querySelector('#score').innerText = `Placar: ${score}`;
+      } else answer.innerText = 'Errou! Tente novamente!';
     });
   });
 };
 
-createBalls(nBalls);
+const clickReset = () => {
+  document.querySelector('#reset-game').addEventListener('click', () => {
+    containerBalls.innerHTML = '';
+    createBalls(numberBalls);
+    createRandomCorrect(numberBalls);
+    clickBalls();
+    answer.innerText = 'Escolha uma cor';
+  });
+};
+
+createBalls(numberBalls);
 createRandomRGB();
-createRandomCorrect(nBalls);
+createRandomCorrect(numberBalls);
 clickBalls();
+clickReset();
