@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#section-balls {
+display: flex;
+justify-content: center;
+}
+
+.ball {
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+}
