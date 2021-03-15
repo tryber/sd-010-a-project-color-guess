@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+[ type = 'number' ] {
+  background-color: black;
+  color: white;
+  border: 1px solid blue;
+  border-radius: 15px;
+}
+
+.ball {
+  display: inline-block;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+
+.btn {
+  border-radius: 15px;
+  padding: 5px 3px;
+  box-shadow: 2px 2px 2px black;
+}
