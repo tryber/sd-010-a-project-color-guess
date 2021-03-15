@@ -1,4 +1,5 @@
 const colorGuess = document.getElementById('rgb-color');
+const circles = document.querySelectorAll('.ball');
 
 function generateRgbColor() {
   const rgb1 = Math.floor(Math.random() * 255 + 1);
@@ -8,3 +9,11 @@ function generateRgbColor() {
 }
 
 colorGuess.innerHTML = generateRgbColor();
+
+function setColorCircles() {
+  for (let i = 0; i < circles.length; i += 1) {
+    circles[i].style.backgroundColor = generateRgbColor();
+  }
+}
+
+setColorCircles();
