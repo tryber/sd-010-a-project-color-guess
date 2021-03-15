@@ -2,6 +2,7 @@ const colorGuess = document.getElementById('rgb-color');
 const circles = document.querySelectorAll('.ball');
 const answer = document.getElementById('answer');
 const ballsGroup = document.getElementById('balls-container');
+const btnReset = document.getElementById('reset-game');
 
 window.onload = () => {
   answer.innerHTML = 'Escolha uma cor';
@@ -21,7 +22,6 @@ function setColorCircles() {
     circles[i].style.backgroundColor = generateRgbColor();
   }
   const correctBall = Math.floor(Math.random() * 6);
-  console.log(correctBall);
   circles[correctBall].style.backgroundColor = colorGuess.innerHTML;
 }
 
@@ -36,5 +36,14 @@ function checkColor() {
   });
 }
 
+function resetGame() {
+  btnReset.addEventListener('click', () => {
+    colorGuess.innerHTML = generateRgbColor();
+    setColorCircles();
+    answer.innerHTML = 'Escolha uma cor';
+  });
+}
+
 setColorCircles();
+resetGame();
 checkColor();
