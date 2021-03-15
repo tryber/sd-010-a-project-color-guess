@@ -1,0 +1,15 @@
+/* Esta página pode ser vista na url https://rogerio-lambert.github.io/javaScript-DOM/color-guess/color-guess.html */
+
+.ball {
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+  margin: 5px;
+  border: solid black 1px;
+  display: inline-block;
+}
+
+body {
+  text-align: center;
+  width: 415px;
+}
