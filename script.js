@@ -3,6 +3,8 @@ const circles = document.querySelectorAll('.ball');
 const answer = document.getElementById('answer');
 const ballsGroup = document.getElementById('balls-container');
 const btnReset = document.getElementById('reset-game');
+const scoreView = document.getElementById('score');
+let score = 0;
 
 window.onload = () => {
   answer.innerHTML = 'Escolha uma cor';
@@ -25,6 +27,13 @@ function setColorCircles() {
   circles[correctBall].style.backgroundColor = colorGuess.innerHTML;
 }
 
+function gameScore() {
+  if (answer.innerHTML === 'Acertou!') {
+    score += 3;
+  }
+  scoreView.innerHTML = `Pontuação: ${score}`;
+}
+
 function checkColor() {
   ballsGroup.addEventListener('click', (e) => {
     const ball = e.target;
@@ -33,6 +42,7 @@ function checkColor() {
     } else {
       answer.innerHTML = 'Errou! Tente novamente!';
     }
+    gameScore();
   });
 }
 
@@ -47,3 +57,4 @@ function resetGame() {
 setColorCircles();
 resetGame();
 checkColor();
+gameScore();
