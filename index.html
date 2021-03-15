@@ -4,9 +4,29 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
   <title id="title">Color Guess</title>
 </head>
 <body>
-  
+  <header id="header">
+    <h1>Adivinhe a cor!</h1>
+    <label for="qty-balls">Digite a quantidade de cores: </label>
+    <input id="qty-balls" type="number" min=1 max=50>
+  </header>
+  <main id="main">
+    <h1 id="rgb-color"></h1>
+    <p>Placar: <span id="score">0</span></p>
+    <section id="colors-balls">
+    </section>
+    <p id="answer">Escolha uma cor</p>
+    <section id="btn-controls">
+      <button id="" class="btn">Mudar Dificuldade</button>
+      <button id="reset-game" class="btn">Resetar o jogo/cores</button>
+    </section>
+  </main>
+  <footer id="footer">
+    <p>Desenvolvido por Lucas Eduardo Pedroso</p>
+  </footer>
 </body>
 </html>
