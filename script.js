@@ -2,7 +2,7 @@
 const rgbColor = document.querySelector('#rgb-color');
 
 function generatesRandomRgb () {
-  const randomColor = `rgb(${Math.ceil(Math.random() * 254)}, ${Math.ceil(Math.random() * 254)}, ${Math.ceil(Math.random() * 254)})`
+  const randomColor = `(${Math.ceil(Math.random() * 254)}, ${Math.ceil(Math.random() * 254)}, ${Math.ceil(Math.random() * 254)})`
 
   return randomColor;
 }
@@ -12,8 +12,25 @@ const balls = document.querySelectorAll('.ball')
 
 function generateBallsColor () {
   for (let i = 0; i < balls.length; i += 1) {
-    balls[i].style.backgroundColor = generatesRandomRgb();
+    balls[i].style.backgroundColor = "rgb" + generatesRandomRgb();
   }
 }
 
 generateBallsColor();
+
+const answer = document.querySelector('#answer')
+
+function chooseRightColor (event) {
+  for (let i = 0; i < balls.length; i += 1) {
+    let eventBackground = rgbColor.innerText
+    if (event.target.style.backgroundColor.includes(eventBackground)) {
+      answer.innerText = "Acertou!"
+    } else {
+      answer.innerText = "Errou! Tente novamente!"
+    }
+  }
+}
+
+for (let i = 0; i < balls.length; i += 1) {
+  balls[i].addEventListener('click', chooseRightColor)
+}
