@@ -29,7 +29,12 @@ function checkAnswer(e) {
     const target = e.target;
     const text = document.querySelector('#rgb-color');
     const textColor = `rgb${text.innerText}`
-    target.style.backgroundColor == textColor ? answer.innerText = "Acertou!" : answer.innerText = "Errou! Tente novamente!";
+    if (target.style.backgroundColor == textColor) {
+        answer.innerText = "Acertou!";
+    } else {
+        answer.innerText = "Errou! Tente novamente!";
+    }
+    answer.style.backgroundColor = textColor;
 }
 
 for (let index = 0; index < balls.length; index += 1) {
