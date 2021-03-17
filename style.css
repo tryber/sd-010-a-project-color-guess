@@ -9,8 +9,7 @@ header {
     text-align: center;
     font-size: 4vw;
     width: 35vw;
-    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
-        -webkit-background-clip: text;
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red); -webkit-background-clip: text;
     color: transparent;
 }
 
@@ -22,14 +21,19 @@ main {
 }
 
 #rgb-container {
+    width: 100%;
     font-size: 1.5vw;
-    margin: 30px;
+    margin: 30px 0;
+}
+
+#rgb-color {
+    text-align: center;
 }
 
 #colors-container {
     display: flex;
     justify-content: space-around;
-    margin: 30px;
+    margin-top: 30px;
 }
 
 .ball {
@@ -38,6 +42,16 @@ main {
     width: 100px;
     height: 100px;
     margin: 15px;
+}
+
+#answer {
+    padding: 10px;
+    font-size: 1.3em;
+    background-color: rgb(235, 235, 235);
+    border: solid 1px gray;
+    /* rainbow box-shadow */
+    -webkit-box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(0,0,0,0);
 }
 
 /* -----------------------footer----------------------- */
