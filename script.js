@@ -2,7 +2,7 @@
 const balls = document.querySelectorAll('.ball');
 
 function generateRandomColor() {
-    const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+    const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
     return randomColor;
 }
 
@@ -26,13 +26,12 @@ getRandomColorToText();
 const answer = document.querySelector('#answer');
 
 function checkAnswer(e) {
-    const target = e.target;
     const text = document.querySelector('#rgb-color');
-    const textColor = `rgb${text.innerText}`
-    if (target.style.backgroundColor == textColor) {
-        answer.innerText = "Acertou!";
+    const textColor = `rgb${text.innerText}`;
+    if (e.target.style.backgroundColor === textColor) {
+        answer.innerText = 'Acertou!';
     } else {
-        answer.innerText = "Errou! Tente novamente!";
+        answer.innerText = 'Errou! Tente novamente!';
     }
     answer.style.backgroundColor = textColor;
 }
