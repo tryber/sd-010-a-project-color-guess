@@ -14,7 +14,7 @@ const balls = document.querySelectorAll('.ball');
 
 function generateBallsColor() {
   for (let i = 0; i < balls.length; i += 1) {
-    balls[i].style.backgroundColor = 'rgb' + generatesRandomRgb();
+    balls[i].style.backgroundColor = `rgb${generatesRandomRgb()}`;
   }
 }
 
@@ -25,7 +25,7 @@ const answer = document.querySelector('#answer');
 
 function chooseRightColor(event) {
   for (let i = 0; i < balls.length; i += 1) {
-    let eventBackground = rgbColor.innerText;
+    const eventBackground = rgbColor.innerText;
     if (event.target.style.backgroundColor.includes(eventBackground)) {
       answer.innerText = 'Acertou!';
     } else {
@@ -39,13 +39,37 @@ for (let i = 0; i < balls.length; i += 1) {
 }
 
 // Gerando cor a ser adivinhada aleatóriamente
-rgbColor.innerText = generatesRandomRgb();
+function generateRgbColor () {
+  rgbColor.innerText = generatesRandomRgb();
+
+  return rgbColor.innerText;
+}
+generateRgbColor ()
 
 // Aplicando essa cor em alguma bola aleatória
-const randomBall = parseInt(Math.random() * 6);
+let randomBall = 0;
+
+function randomNumber () {
+  randomBall = parseInt(Math.random() * 6, 10)
+}
 
 function applyAnswer() {
-  balls[randomBall].style.backgroundColor = 'rgb' + rgbColor.innerText;
+  balls[randomBall].style.backgroundColor = `rgb${rgbColor.innerText}`;
 }
 
 window.onload = applyAnswer;
+
+// Botão de resetar o jogo
+const reset = document.querySelector('#reset-game')
+
+function resetGame (event) {
+  generateBallsColor();
+  chooseRightColor(event);
+  generateRgbColor ();
+  randomNumber ();
+  applyAnswer();
+
+  answer.innerText = "Escolha uma cor"
+}
+
+reset.addEventListener('click', resetGame)
