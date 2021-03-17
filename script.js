@@ -9,6 +9,17 @@ function generatesRandomRgb() {
   return randomColor;
 }
 
+// Placar
+const score = document.querySelector('#score');
+const answer = document.querySelector('#answer');
+let scorePoints = 0;
+
+function checkAnswer() {
+  if (answer.innerText === 'Acertou!') {
+    scorePoints += 3;
+  }
+}
+
 // Gerar cores aleatórias dos círculos
 const balls = document.querySelectorAll('.ball');
 
@@ -21,7 +32,6 @@ function generateBallsColor() {
 generateBallsColor();
 
 // Clicar no botão e verificar se a resposta está correta
-const answer = document.querySelector('#answer');
 
 function chooseRightColor(event) {
   for (let i = 0; i < balls.length; i += 1) {
@@ -32,6 +42,8 @@ function chooseRightColor(event) {
       answer.innerText = 'Errou! Tente novamente!';
     }
   }
+  checkAnswer();
+  score.innerText = scorePoints;
 }
 
 for (let i = 0; i < balls.length; i += 1) {
@@ -39,37 +51,38 @@ for (let i = 0; i < balls.length; i += 1) {
 }
 
 // Gerando cor a ser adivinhada aleatóriamente
-function generateRgbColor () {
+function generateRgbColor() {
   rgbColor.innerText = generatesRandomRgb();
 
   return rgbColor.innerText;
 }
-generateRgbColor ()
+generateRgbColor();
 
 // Aplicando essa cor em alguma bola aleatória
 let randomBall = 0;
 
-function randomNumber () {
-  randomBall = parseInt(Math.random() * 6, 10)
+function randomNumber() {
+  randomBall = parseInt(Math.random() * 6, 10);
+  return randomBall;
 }
 
 function applyAnswer() {
-  balls[randomBall].style.backgroundColor = `rgb${rgbColor.innerText}`;
+  balls[randomNumber()].style.backgroundColor = `rgb${rgbColor.innerText}`;
 }
 
 window.onload = applyAnswer;
 
 // Botão de resetar o jogo
-const reset = document.querySelector('#reset-game')
+const reset = document.querySelector('#reset-game');
 
-function resetGame (event) {
+function resetGame(event) {
   generateBallsColor();
   chooseRightColor(event);
-  generateRgbColor ();
-  randomNumber ();
+  generateRgbColor();
+  randomNumber();
   applyAnswer();
 
-  answer.innerText = "Escolha uma cor"
+  answer.innerText = 'Escolha uma cor';
 }
 
-reset.addEventListener('click', resetGame)
+reset.addEventListener('click', resetGame);
