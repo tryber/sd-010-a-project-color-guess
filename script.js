@@ -3,7 +3,7 @@ const rgbColor = document.querySelector('#rgb-color');
 
 function generatesRandomRgb() {
   const randomColor = `(${Math.ceil(Math.random() * 254)}, ${Math.ceil(
-    Math.random() * 254
+    Math.random() * 254,
   )}, ${Math.ceil(Math.random() * 254)})`;
 
   return randomColor;
