@@ -27,16 +27,20 @@ changeColorsBalls();
 numerosAleatorios();
 function clickBalls() {
   const answer = document.getElementById('answer');
-  const ball = document.getElementsByClassName('ball');
-  for (let index = 0; index < ball.length; index += 1) {
-    ball[index].addEventListener('click', () => {
-      const numero = document.querySelector('#rgb-color');
-      if (ball[index].style.backgroundColor === numero.innerHTML) {
-        answer.innerHTML = 'Acertou!';
-      } else {
-        answer.innerHTML = 'Errou! Tente novamente!';
+  const fatherBalls = document.getElementById('fatherBalls');
+  const numero = document.querySelector('#rgb-color');
+  fatherBalls.addEventListener('click', (e) => {
+     const ballElement = e.target;
+    // for (let index = 0; index < ball.length; index += 1) {
+      if(ballElement.className === 'ball'){
+        if (ballElement.style.backgroundColor === numero.innerHTML && ballElement.classList.contains('ball')) {
+          answer.innerHTML = 'Acertou!';
+        } else {
+          answer.innerHTML = 'Errou! Tente novamente!';
+        }
       }
-    });
-  }
+      
+      console.log(e);
+  });
 }
 clickBalls();
