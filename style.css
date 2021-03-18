@@ -1,0 +1,15 @@
+.ball-container {
+  display: flex;
+}
+
+.ball-container div + div {
+  margin-left: 10px;
+}
+
+.ball {
+  background-color: aqua;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
