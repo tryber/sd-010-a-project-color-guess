@@ -2,3 +2,48 @@
   margin: 0;
   padding: 0;
 }
+
+#balls {
+display: flex;
+margin: 5%;
+}
+
+.ball {
+  border-radius: 100%;
+}
+
+#ball1 {
+  background-color: rgb(162, 230, 207);
+  width: 150px;
+  height: 150px;
+}
+
+#ball2 {
+  background-color: rgb(162, 230, 207);
+  width: 150px;
+  height: 150px;
+}
+
+#ball3 {
+  background-color: rgb(54, 109, 91);
+  width: 150px;
+  height: 150px;
+}
+
+#ball4 {
+  background-color: rgb(104, 172, 59);
+  width: 150px;
+  height: 150px;
+}
+
+#ball5 {
+  background-color: rgb(149, 161, 36);
+  width: 150px;
+  height: 150px;
+}
+
+#ball6 {
+  background-color: rgb(163, 126, 91);
+  width: 150px;
+  height: 150px;
+}
