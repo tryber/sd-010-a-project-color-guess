@@ -1,0 +1,10 @@
+.balls-div {
+  display: flex;
+}
+
+.ball {
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 50px;
+}
