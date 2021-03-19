@@ -4,8 +4,13 @@
 }
 
 #balls {
-display: flex;
-margin: 5%;
+  display: flex;
+  margin: 5%;
+  margin-top: 20%;
+}
+
+div {
+  margin: auto;
 }
 
 .ball {
