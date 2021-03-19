@@ -1,12 +1,36 @@
 * {
   margin: 0;
   padding: 0;
+  background-color: burlywood;
+}
+
+#header {
+  display: block;
+  text-align: center;
+  padding-top: 10px;
+}
+
+#title {
+  font-size: 40px;
+}
+
+#escolha {
+  display: block;
+  text-align: center;
+}
+
+#answer {
+  padding-top: 10%;
+}
+
+#rgb-color {
+  padding-top: 3%;
 }
 
 #balls {
   display: flex;
   margin: 5%;
-  margin-top: 20%;
+  margin-top: 5%;
 }
 
 div {
@@ -15,40 +39,9 @@ div {
 
 .ball {
   border-radius: 100%;
+  border: black 2px solid;
 }
 
-#ball1 {
-  background-color: rgb(162, 230, 207);
-  width: 150px;
-  height: 150px;
-}
-
-#ball2 {
-  background-color: rgb(162, 230, 207);
-  width: 150px;
-  height: 150px;
-}
-
-#ball3 {
-  background-color: rgb(54, 109, 91);
-  width: 150px;
-  height: 150px;
-}
-
-#ball4 {
-  background-color: rgb(104, 172, 59);
-  width: 150px;
-  height: 150px;
-}
-
-#ball5 {
-  background-color: rgb(149, 161, 36);
-  width: 150px;
-  height: 150px;
-}
-
-#ball6 {
-  background-color: rgb(163, 126, 91);
-  width: 150px;
-  height: 150px;
+p {
+  font-size: 30px;
 }
