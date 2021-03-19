@@ -1,5 +1,7 @@
 const selectBalls = document.getElementsByClassName('ball');
 const selectAnswer = document.querySelector('#answer');
+const selectRgb = document.querySelector('#rgb-color');
+const selectButton = document.querySelector('#reset-game');
 
 function generateRandomColors() {
   for (let index = 0; index < selectBalls.length; index += 1) {
@@ -18,6 +20,15 @@ function trueColor() {
 
 trueColor();
 
+function whatIsTheTrueColor() {
+  for (let index = 0; index < selectBalls.length; index += 1) {
+    if (selectBalls[index].id === 'true') {
+      selectRgb.innerText = selectBalls[index].style.backgroundColor;
+    }
+  }
+}
+whatIsTheTrueColor();
+
 function game(event) {
   const evento = event.target;
   if (evento.id === 'true') {
@@ -27,6 +38,12 @@ function game(event) {
   }
 }
 
+// Consultado uso da função .reload em: https://www.w3schools.com/jsref/met_loc_reload.asp
+function resetGame() {
+  window.location.reload();
+}
+
 for (let index = 0; index < selectBalls.length; index += 1) {
   selectBalls[index].addEventListener('click', game);
 }
+selectButton.addEventListener('click', resetGame);

@@ -45,3 +45,14 @@ div {
 p {
   font-size: 30px;
 }
+
+#divButton {
+  text-align: center;
+}
+
+button {
+  width: 150px;
+  margin-top: 2%;
+  background-color: rgb(221, 190, 54);
+  font-size: 30px;
+}
