@@ -29,7 +29,9 @@ function clickBalls() {
   const answer = document.getElementById('answer');
   const fatherBalls = document.getElementById('fatherBalls');
   const numero = document.querySelector('#rgb-color');
+  const placar = document.querySelector('#placar');
   let conta = 0;
+  placar.innerHTML = 'Placar: ' + 0;
   fatherBalls.addEventListener('click', (e) => {
     const placar = document.querySelector('#placar');
     const ballElement = e.target;
@@ -59,9 +61,11 @@ savePlacar();
 function resetarPlarcar(){
   const resetPlacar = document.querySelector('#resetPlacar');
   resetPlacar.addEventListener('click', () => {
-    const getItem = localStorage.getItem('placar');
-    if (getItem !== '' ){
-       placar.innerHTML = 'Placar:' + 0;
+   const reset = localStorage.setItem('placar', placar.innerHTML)
+   const getItem = localStorage.getItem('placar');
+    localStorage.clear()
+    if(getItem !== ''){
+      placar.innerHTML = 'Placar: ' + 0;
     }
   })
 }
