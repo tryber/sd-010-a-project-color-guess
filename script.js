@@ -2,6 +2,7 @@ const selectBalls = document.getElementsByClassName('ball');
 const selectAnswer = document.querySelector('#answer');
 const selectRgb = document.querySelector('#rgb-color');
 const selectButton = document.querySelector('#reset-game');
+const selectScore = document.querySelector('#score');
 
 function generateRandomColors() {
   for (let index = 0; index < selectBalls.length; index += 1) {
@@ -29,10 +30,16 @@ function whatIsTheTrueColor() {
 }
 whatIsTheTrueColor();
 
-function game(event) {
+function game(event) { // consultado uso de regex em: https://pt.stackoverflow.com/questions/92981/express%C3%A3o-regular-para-aceitar-apenas-n%C3%BAmeros-e-uma
   const evento = event.target;
+  let points = 3;
+  const getpoints = localStorage.getItem('score');
+  points += parseInt(getpoints, 10);
   if (evento.id === 'true') {
     selectAnswer.innerHTML = 'Acertou!';
+    const text = selectScore.innerHTML.replace(/\d+/g, points);
+    selectScore.innerHTML = text;
+    localStorage.setItem('score', points);
   } else {
     selectAnswer.innerHTML = 'Errou! Tente novamente!';
   }
