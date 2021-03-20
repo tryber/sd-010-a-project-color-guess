@@ -29,19 +29,40 @@ function clickBalls() {
   const answer = document.getElementById('answer');
   const fatherBalls = document.getElementById('fatherBalls');
   const numero = document.querySelector('#rgb-color');
+  let conta = 0;
   fatherBalls.addEventListener('click', (e) => {
     const placar = document.querySelector('#placar');
-    let conta = 0;
     const ballElement = e.target;
-    if (ballElement.className === 'ball'){
+    if (ballElement.className === 'ball') {
       if (ballElement.style.backgroundColor === numero.innerHTML) {
         answer.innerHTML = 'Acertou!';
-        conta = conta + 3;
-        placar.innerHTML = 'Placar:' + conta;
+        placar.innerHTML = 'Placar: ' + (conta += 3);
       } else {
         answer.innerHTML = 'Errou! Tente novamente!';
       }
     }
+    localStorage.setItem('placar', placar.innerHTML);
   });
 }
 clickBalls();
+
+function savePlacar(){
+  const getItem = localStorage.getItem('placar');
+  if(getItem === null) {
+     placar.innerHTML = 'Placar: ' + 0;
+  }else {
+    placar.innerHTML = getItem;
+  }
+}
+savePlacar();
+
+function resetarPlarcar(){
+  const resetPlacar = document.querySelector('#resetPlacar');
+  resetPlacar.addEventListener('click', () => {
+    const getItem = localStorage.getItem('placar');
+    if (getItem !== '' ){
+       placar.innerHTML = 'Placar:' + 0;
+    }
+  })
+}
+resetarPlarcar();

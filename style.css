@@ -54,9 +54,16 @@ body {
   justify-content: center;
   margin-top: 100px;
   margin-bottom: 20px;
+  justify-content: space-evenly;
 }
 
 .color1 {
   color: salmon;
  
 }
+
+#placar {
+  font-size: 20px;
+  font-weight: 900;
+}
+
