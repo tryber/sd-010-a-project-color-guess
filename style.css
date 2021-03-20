@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-color: burlywood;
+}
+
+#header {
+  display: block;
+  text-align: center;
+  padding-top: 10px;
+}
+
+#title {
+  font-size: 40px;
+}
+
+#escolha {
+  display: block;
+  text-align: center;
+}
+
+#answer {
+  padding-top: 10%;
+}
+
+#rgb-color {
+  padding-top: 3%;
+}
+
+#balls {
+  display: flex;
+  margin: 5%;
+  margin-top: 5%;
+}
+
+div {
+  margin: auto;
+}
+
+.ball {
+  border-radius: 100%;
+  border: black 2px solid;
+}
+
+p {
+  font-size: 30px;
+}
+
+#divButton {
+  text-align: center;
+}
+
+button {
+  width: 150px;
+  margin-top: 2%;
+  background-color: rgb(221, 190, 54);
+  font-size: 30px;
+}
