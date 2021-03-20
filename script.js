@@ -30,17 +30,18 @@ function clickBalls() {
   const fatherBalls = document.getElementById('fatherBalls');
   const numero = document.querySelector('#rgb-color');
   fatherBalls.addEventListener('click', (e) => {
-     const ballElement = e.target;
-    // for (let index = 0; index < ball.length; index += 1) {
-      if(ballElement.className === 'ball'){
-        if (ballElement.style.backgroundColor === numero.innerHTML && ballElement.classList.contains('ball')) {
-          answer.innerHTML = 'Acertou!';
-        } else {
-          answer.innerHTML = 'Errou! Tente novamente!';
-        }
+    const placar = document.querySelector('#placar');
+    let conta = 0;
+    const ballElement = e.target;
+    if (ballElement.className === 'ball'){
+      if (ballElement.style.backgroundColor === numero.innerHTML) {
+        answer.innerHTML = 'Acertou!';
+        conta = conta + 3;
+        placar.innerHTML = 'Placar:' + conta;
+      } else {
+        answer.innerHTML = 'Errou! Tente novamente!';
       }
-      
-      console.log(e);
+    }
   });
 }
 clickBalls();
