@@ -3,7 +3,17 @@ const selectAnswer = document.querySelector('#answer');
 const selectRgb = document.querySelector('#rgb-color');
 const selectButton = document.querySelector('#reset-game');
 const selectScore = document.querySelector('#score');
+// localStorage.setItem('score', points);
 
+let points = 0;
+if (localStorage.getItem('score')) {
+  const getpoints = localStorage.getItem('score');
+  points += parseInt(getpoints, 10);
+} else {
+  points = 0;
+  localStorage.setItem('score', points);
+}
+selectScore.innerHTML = points;
 function generateRandomColors() {
   for (let index = 0; index < selectBalls.length; index += 1) {
     selectBalls[index].style.backgroundColor = `rgb(${Math.random() * 255}
@@ -30,15 +40,12 @@ function whatIsTheTrueColor() {
 }
 whatIsTheTrueColor();
 
-function game(event) { // consultado uso de regex em: https://pt.stackoverflow.com/questions/92981/express%C3%A3o-regular-para-aceitar-apenas-n%C3%BAmeros-e-uma
+function game(event) {
   const evento = event.target;
-  let points = 3;
-  const getpoints = localStorage.getItem('score');
-  points += parseInt(getpoints, 10);
   if (evento.id === 'true') {
     selectAnswer.innerHTML = 'Acertou!';
-    const text = selectScore.innerHTML.replace(/\d+/g, points);
-    selectScore.innerHTML = text;
+    points += 3;
+    selectScore.innerHTML = points;
     localStorage.setItem('score', points);
   } else {
     selectAnswer.innerHTML = 'Errou! Tente novamente!';
