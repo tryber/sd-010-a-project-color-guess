@@ -1,0 +1,69 @@
+h1 {
+  text-align: center;
+  color: rebeccapurple;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 50px
+}
+
+
+#rgb-color {
+  text-align: center;
+  font-size: 35px;
+  font-weight: 900;
+  color: aliceblue;
+}
+
+#fatherBalls {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(233, 233, 233);
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.ball {
+  width: 80px;
+  height: 80px;
+  background-color: rebeccapurple;
+  border-radius: 50px;
+  margin-left: 30px;
+  margin-top: 50px;
+}
+
+p {
+  text-align: center;
+}
+
+body {
+  background-color: salmon;
+ width: 70%;
+ margin: auto;
+}
+
+#answer {
+  font-weight: 900;
+  font-size: 30px;
+}
+
+#buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 20px;
+  justify-content: space-evenly;
+}
+
+.color1 {
+  color: salmon;
+ 
+}
+
+#placar {
+  font-size: 20px;
+  font-weight: 900;
+}
+
