@@ -3,7 +3,6 @@
 }
 
 #rgb-color {
-  /* background: crimson; */
   text-align: center;
   font-size: 20pt;
   margin-bottom: 4%;
@@ -20,4 +19,13 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
+}
+
+#reset-game {
+  margin-top: 2%;
+  background-color: rgb(117, 36, 184);
+  color: whitesmoke;
+  font-size: 15pt;
+  padding: 8px;
+  border-radius: 15%;
 }
