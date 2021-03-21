@@ -3,7 +3,7 @@ const colorOptions = document.querySelector('#color-options');
 const answer = document.querySelector('#answer');
 const resetBtn = document.querySelector('#reset-game');
 let counter = 0;
-const showCounter = document.createElement('h2');
+const showCounter = document.querySelector('#score');
 const counterSection = document.querySelector('#counter-section');
 
 const color = () => Math.ceil(Math.random() * 255);
