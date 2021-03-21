@@ -1,0 +1,31 @@
+#title {
+  text-align: center;
+}
+
+#rgb-color {
+  text-align: center;
+  font-size: 20pt;
+  margin-bottom: 4%;
+}
+
+#color-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.ball {
+  color: white;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+#reset-game {
+  margin-top: 2%;
+  background-color: rgb(117, 36, 184);
+  color: whitesmoke;
+  font-size: 15pt;
+  padding: 8px;
+  border-radius: 15%;
+}
