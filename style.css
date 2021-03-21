@@ -25,3 +25,18 @@ body {
   border: 1px solid black;
   border-radius: 50px;
 }
+
+.ball:hover {
+  transform: scale(1.5);
+  cursor: pointer;
+  border: 2px dashed black;
+}
+
+#score-container {
+  border: 1px solid black;
+  position: fixed;
+  top: 0;
+  right: 50px;
+  padding: 5px 20px;
+  font-size: large;
+}
