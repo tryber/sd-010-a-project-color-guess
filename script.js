@@ -2,6 +2,8 @@ const rgbColor = document.getElementById('rgb-color');
 const balls = document.querySelectorAll('.ball');
 const answer = document.getElementById('answer');
 const resetBtn = document.getElementById('reset-game');
+const score = document.getElementById('score');
+
 
 function randomRGB() {
   return Math.floor(Math.random() * 255);
@@ -17,6 +19,8 @@ function initializeGame() {
     ball.addEventListener('click', (evt) => {
       if (evt.target.style.backgroundColor === colorToBeGuessed) {
         answer.innerText = 'Acertou!';
+        let scoreInt = parseInt(score.innerText);
+        score.innerText = scoreInt+3;
       } else {
         answer.innerText = 'Errou! Tente novamente!';
       }
