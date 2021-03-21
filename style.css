@@ -1,11 +1,11 @@
 body {
   text-align: center;
-  font-family: 'Ubuntu';
+  font-family: monospace;
 }
 
 #rgb-color {
   width: fit-content;
-  margin: 0px auto;
+  margin: 0 auto;
   padding: 10px;
   font-size: 30px;
   border: 1px solid black;
