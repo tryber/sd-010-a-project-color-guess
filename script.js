@@ -1,3 +1,5 @@
+let score = 0;
+
 function getRandomRgbColor() {
   const red = Math.random() * 255;
   const green = Math.random() * 255;
@@ -15,6 +17,13 @@ function addRandomBalls() {
   }
 }
 
+function addscore() {
+  const scoreElement = document.getElementById('score');
+  score += 3;
+
+  scoreElement.innerHTML = score;
+}
+
 function checkGuessColor() {
   const balls = document.getElementsByClassName('ball');
   for (let index = 0; index < balls.length; index += 1) {
@@ -25,6 +34,7 @@ function checkGuessColor() {
 
       if (color === backgroundColor) {
         answer.innerHTML = 'Acertou!';
+        addscore();
       } else {
         answer.innerHTML = 'Errou! Tente novamente!';
       }
