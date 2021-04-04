@@ -28,7 +28,6 @@ ApplyColorBall();
 const testAnswer = (event) => {
   const element = event.target;
   const rgbColor = document.getElementById('rgb-color');
-  // balls[0].style.backgroundColor = `rgb${rgbColor.textContent}`;
   const bgColorCircle = element.style.backgroundColor;
   const bgColorCircleOnlyNumbers = bgColorCircle.slice(3, bgColorCircle.length);
   if (event.target.classList.contains('ball')) {
@@ -56,5 +55,3 @@ const resetGame = () => {
 resetGameBtn.addEventListener('click', resetGame);
 
 resetGame();
-
-// testAnswer();

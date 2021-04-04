@@ -8,28 +8,33 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
+  <header class="header">
     <h1 id="title">Color Guess</h1>
   </header>
   
-  <div>
-    <p id="rgb-color">(231, 239, 162)</p>
-  </div>
+  <div class="container">
 
-  <div class="ball-container">
-    <div class="ball"></div>
-    <div class="ball"></div>
-    <div class="ball"></div>
-    <div class="ball"></div>
-    <div class="ball"></div>
-    <div class="ball"></div>
-  </div>
+    <div>
+      <p id="rgb-color">(231, 239, 162)</p>
+    </div>
+  
+    <div class="ball-container">
+      <div class="ball"></div>
+      <div class="ball"></div>
+      <div class="ball"></div>
+      <div class="ball"></div>
+      <div class="ball"></div>
+      <div class="ball"></div>
+    </div>
+  
+    <div class="answer">
+      <span id="answer">Escolha uma cor</span>
+    </div>
 
-  <div>
-    <span id="answer">Escolha uma cor</span>
-  </div>
-  <div>
-    <button id="reset-game">Resetar o jogo/cores</button>
+    <div>
+      <button id="reset-game" class="btn">Resetar o jogo/cores</button>
+    </div>
+
   </div>
 
   <script src="script.js"></script>
