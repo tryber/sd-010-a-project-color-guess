@@ -25,6 +25,15 @@ const ApplyColorBall = () => {
 
 ApplyColorBall();
 
+let points = 0;
+const scores = (number) => {
+  const score = document.getElementById('score');
+  points += number;
+  score.textContent = `Placar: ${points}`;
+};
+
+scores(0);
+
 const testAnswer = (event) => {
   const element = event.target;
   const rgbColor = document.getElementById('rgb-color');
@@ -34,6 +43,7 @@ const testAnswer = (event) => {
     console.log(rgbColor.textContent, bgColorCircleOnlyNumbers);
     if (rgbColor.textContent === bgColorCircleOnlyNumbers) {
       answer.textContent = 'Acertou!';
+      scores(3);
     } else {
       answer.textContent = 'Errou! Tente novamente!';
     }

@@ -79,3 +79,7 @@ body {
 .btn:hover {
   opacity: 0.8;
 }
+
+#score {
+  text-align: center;
+}
