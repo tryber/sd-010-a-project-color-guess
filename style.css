@@ -1,8 +1,12 @@
 :root {
+
   --bgBody: rgb(239, 230, 246);
+
   --bgBtn: rgb(101, 90, 202);
+
   --colorTextBgDark: rgb(247, 243, 252);
-  --colorTextbright:  rgb(7, 25, 70);
+
+  --colorTextbright: rgb(7, 25, 70);
 }
 
 * {
