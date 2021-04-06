@@ -22,6 +22,10 @@ const guessColor = () => {
   rgbColor.innerText = colorsArray[Math.floor(Math.random() * (colorsArray.length))];
 };
 
+function rightColor() {
+  const score = document.querySelector('#score span');
+  score.innerText = parseInt(score.innerText, 0) + 3;
+}
 const answerTheColor = () => {
   balls.forEach((ball) => {
     ball.addEventListener('click', () => {
@@ -29,7 +33,12 @@ const answerTheColor = () => {
       const textRGB = rgbColor.innerText;
       const correct = 'Acertou!';
       const incorrect = 'Errou! Tente novamente!';
-      ballColor === textRGB ? answer.innerText = correct : answer.innerText = incorrect;
+      if (ballColor === textRGB) {
+        answer.innerText = correct;
+        rightColor();
+      } else {
+        answer.innerText = incorrect;
+      }
     });
   });
 };
@@ -37,8 +46,8 @@ const answerTheColor = () => {
 resetBtn.addEventListener('click', () => {
   setColorToBalls();
   guessColor();
-  answer.innerText = 'Escolha uma cor'
-})
+  answer.innerText = 'Escolha uma cor';
+});
 
 window.onload = () => {
   setColorToBalls();
