@@ -28,4 +28,10 @@ header p {
   height: 50px;
   border-radius: 100%;
   margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+#answers {
+  font-size: 20px;
+  text-align: center;
 }

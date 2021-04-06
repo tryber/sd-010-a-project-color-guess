@@ -1,4 +1,6 @@
 const balls = document.querySelectorAll('.ball');
+const rgbColor = document.getElementById('rgb-color');
+const answer = document.getElementById('answer');
 
 function randomRGBNumbers() {
   return Math.floor(Math.random() * 256);
@@ -14,6 +16,26 @@ function setColorToBalls() {
   });
 }
 
+const guessColor = () => {
+  const colorsArray = [];
+  balls.forEach((ball) => colorsArray.push(ball.style.backgroundColor));
+  rgbColor.innerText = colorsArray[Math.floor(Math.random() * (colorsArray.length))];
+};
+
+const answerTheColor = () => {
+  balls.forEach((ball) => {
+    ball.addEventListener('click', () => {
+      const ballColor = ball.style.backgroundColor;
+      const textRGB = rgbColor.innerText;
+      const correct = 'Acertou!';
+      const incorrect = 'Errou! Tente novamente!';
+      ballColor === textRGB ? answer.innerText = correct : answer.innerText = incorrect;
+    });
+  });
+};
+
 window.onload = () => {
   setColorToBalls();
+  guessColor();
+  answerTheColor();
 };
