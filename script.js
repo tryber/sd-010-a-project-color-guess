@@ -1,7 +1,7 @@
 const balls = document.querySelectorAll('.ball');
 const rgbColor = document.getElementById('rgb-color');
 const answer = document.getElementById('answer');
-
+const resetBtn = document.getElementById('reset-game');
 function randomRGBNumbers() {
   return Math.floor(Math.random() * 256);
 }
@@ -33,6 +33,12 @@ const answerTheColor = () => {
     });
   });
 };
+
+resetBtn.addEventListener('click', () => {
+  setColorToBalls();
+  guessColor();
+  answer.innerText = 'Escolha uma cor'
+})
 
 window.onload = () => {
   setColorToBalls();

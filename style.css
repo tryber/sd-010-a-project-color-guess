@@ -35,3 +35,12 @@ header p {
   font-size: 20px;
   text-align: center;
 }
+
+#buttons {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  margin: 10px;
+}
