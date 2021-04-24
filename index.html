@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js"></script>
+  <title>Color Guess</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 id="title">Adivinhe a cor</h1>
+    </header>
+
+    <main id="main-content" class="container-group">
+      <section id="rgb-section" class="container-group">
+        <!-- colocar uma gradiente do branco até a cor -->
+        <h3>Código RGB</h3>
+        <span id="rgb-color"></span>
+      </section>
+
+      <section id="answer-section">
+      </section>
+
+      <section id="ball-section" class="container-group">
+        <p id="answer"></p>
+        <ul id="ball-list"></ul>
+        <span id="score">0</span>
+        <button id="reset-game">reset</button>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
