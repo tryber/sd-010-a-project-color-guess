@@ -14,19 +14,21 @@ const randomize = () => {
   });
 };
 
+let score = 0;
 const load = () => {
   answer.innerText = 'Escolha uma cor';
   // eslint-disable-next-line max-len
   const correctAnswer = (`${Math.floor(Math.random() * 254)}, ${Math.floor(Math.random() * 254)}, ${Math.floor(Math.random() * 254)}`);
-
   rgbTextDisplay.innerText = `(${correctAnswer})`;
   randomize();
-
   balls[Math.floor(Math.random() * 6)].style.backgroundColor = (`rgb(${correctAnswer})`);
   balls.forEach((ball) => {
+    document.getElementById('score').innerText = `${score}`
     ball.addEventListener('click', (event) => {
       if (event.target.style.backgroundColor === (`rgb(${correctAnswer})`)) {
         answer.innerText = 'Acertou!';
+        score += 3;
+        document.getElementById('score').innerText = `${score}`;
       } else {
         answer.innerText = 'Errou! Tente novamente!';
       }

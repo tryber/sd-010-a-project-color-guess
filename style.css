@@ -25,3 +25,8 @@ p {
   border-radius: 100%;
   margin: 10px;
 }
+
+#score {
+  color: green;
+  font-weight: bolder;
+}
