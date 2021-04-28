@@ -15,6 +15,7 @@ const randomize = () => {
 };
 
 const load = () => {
+  answer.innerText = 'Escolha uma cor';
   // eslint-disable-next-line max-len
   const correctAnswer = (`${Math.floor(Math.random() * 254)}, ${Math.floor(Math.random() * 254)}, ${Math.floor(Math.random() * 254)}`);
 
@@ -34,6 +35,8 @@ const load = () => {
 };
 
 load();
+
+document.getElementById('reset-game').addEventListener('click', load);
 
 // randomize();
 
