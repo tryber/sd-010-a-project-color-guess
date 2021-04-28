@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+h1 {
+  color: darkblue;
+  font-weight: 700;
+  font-size: 50px;
+}
+
+p {
+  font-size: 30px;
+}
+
+#balls {
+  display: flex;
+  justify-content: center;
+}
+
+.ball {
+  width: 60px;
+  height: 60px;
+  border: 1px solid grey;
+  border-radius: 100%;
+  margin: 10px;
+}
+
+#score {
+  color: green;
+  font-weight: 700;
+}
