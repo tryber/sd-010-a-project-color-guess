@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+h1 {
+  color: darkblue;
+  font-weight: bolder;
+  font-size: 50px;  
+}
+
+p {
+  font-size: 30px;
+}
